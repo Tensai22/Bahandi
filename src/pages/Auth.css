@@ -1,0 +1,80 @@
+.auth-container {
+    width: 90%;
+    max-width: 450px;
+    margin: 100px auto;
+    padding: 30px;
+    
+    background-color: #ffffff;
+    border-radius: 16px; 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
+    
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #333;
+    text-align: center; 
+}
+
+.auth-container h1 {
+    font-size: 2.2rem;
+    color: #333;
+    margin-bottom: 25px;
+    font-weight: 700;
+    text-align: center; 
+    padding-left: 0.1px;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+    margin-bottom: 20px;
+}
+
+.auth-form input[type="email"],
+.auth-form input[type="password"],
+.auth-form input[type="text"] {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: #F8F8F8; 
+    
+    color: #000;
+    
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-form input:focus {
+    border-color: #009746; 
+    box-shadow: 0 0 0 3px rgba(0, 151, 70, 0.15); 
+}
+
+.auth-container button {
+    margin-top: 20px;
+}
+
+.auth-container p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.auth-container p a {
+    color: #009746; 
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.auth-container p a:hover {
+    color: #007b3a; 
+    text-decoration: underline;
+}
+
+.auth-container .error-message {
+    color: #d93025; 
+    font-size: 0.95rem;
+    margin-top: 10px;
+    text-align: left;
+}

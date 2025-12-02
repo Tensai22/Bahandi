@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #009746;
+  color: white;
+  z-index: 1000;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 280px;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  font-family: 'Jockey One', sans-serif;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.logo a {
+  color: white;
+  text-decoration: none;
+}
+
+.logo a:visited,
+.logo a:hover,
+.logo a:active,
+.logo a:focus {
+  color: white;
+  text-decoration: none;
+  outline: none;
+}
+
+.main-nav-group {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+nav ul {
+  display: flex;
+  height: 44px;   
+  align-items: center;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 400;
+}
+
+nav ul li {
+  display: flex;
+  align-items: center;  
+}
+
+nav a {
+  color: white !important;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #ff9800;
+}
+
+.cart {
+  position: relative;
+  background-color: #ff7300;
+  border-radius: 8px;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart a {
+  color: #fff;
+}
+
+.cart-count {
+  display: none;
+}
+
+.auth-controls {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.user-greeting {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.highlight-name {
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+.auth-button,
+.auth-button:link,
+.auth-button:visited {
+  display: flex;             
+  align-items: center;       
+  justify-content: center;  
+  
+  background-color: #ff7300;
+  color: #fff;
+
+  padding: 12px 20px;
+  height: 47px;              
+  min-width: 100px;         
+
+  border-radius: 8px;
+  border: none;
+
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+
+  transition: background-color 0.2s;
+  box-sizing: border-box;
+}
+
+/* Выйти — красная */
+.logout-button {
+  margin-bottom: 10px;
+  background-color: #d93025 !important;
+}
+
+
+
+body {
+  margin: 0;
+  padding-top: 100px;
+  background-color: #ffffff;
+}

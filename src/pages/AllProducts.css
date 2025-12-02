@@ -1,0 +1,127 @@
+/* src/pages/AllProducts.css */
+
+.product-list-page-container {
+    padding-top: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 2.5rem;
+}
+
+.search-input {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    font-size: 1.1rem;
+    font-family: inherit;
+    background-color: #F8F8F8;
+    outline: none;
+    transition: border-color 0.2s ease;
+    /* 🛑 ДОБАВЛЕНО: ТЕМНО-СЕРЫЙ ЦВЕТ ТЕКСТА */
+    color: #333; 
+}
+
+.search-input:focus {
+    border-color: #009746;
+    box-shadow: 0 0 0 3px rgba(0, 151, 70, 0.15);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.product-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+    width: 100%;
+    height: 180px; 
+    border-radius: 12px;
+    margin-bottom: 15px;
+    object-fit: cover; 
+}
+
+.product-img-placeholder {
+    width: 100%;
+    height: 180px;
+    background-color: #D7D7D7;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.product-name {
+    font-size: 1.4rem;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    color: #009746; 
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.product-category {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.add-to-cart-btn {
+    margin-top: auto; 
+    width: 100%;
+    background-color: #009746;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #007a38;
+}
+
+.loading-message, .error-message, .no-results-message {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.error-message {
+    color: #d93025;
+}
