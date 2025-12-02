@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "../components/props/Card";
 import "./CardCSS.css";
-import Loader from "../components/loader/loader";
+import Loader from "../components/loader/Loader";
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 

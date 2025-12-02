@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "../components/props/Card";
-import Loader from "../components/loader/loader";
+import Loader from "../components/loader/Loader";
 import "./CardCSS.css";
 
 function ComboPage() {
