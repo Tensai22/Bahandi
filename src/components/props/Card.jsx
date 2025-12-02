@@ -12,24 +12,28 @@ function Card({ id, name, price, volume, image }) {
   };
 
   return (
-    <div className="container">
-      <div className="card" onClick={openCard}>
-        <div className="image-container">
-          <img src={image} alt={name} className="image" />
-        </div>
-        <div className="info">
-          <h3 className="price">{price} ₸</h3>
-          <p className="name">
-            {name} {volume}
-          </p>
-        </div>
+    <div className="card">
+      <div className="image-container" onClick={openCard}>
+        <img src={image} alt={name} className="image" />
       </div>
-
-      <button className="add-to-cart" onClick={() => addToCart({ id, name, price, volume, image })}>
+      <div className="info" onClick={openCard}>
+        <h3 className="price">{price} ₸</h3>
+        <p className="name">
+          {name} {volume}
+        </p>
+      </div>
+      <button
+        className="add-to-cart"
+        onClick={(e) => {
+          e.stopPropagation(); 
+          addToCart({ id, name, price, volume, image });
+        }}
+      >
         В корзину
       </button>
     </div>
   );
 }
+
 
 export default Card;

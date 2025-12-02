@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import axios from 'axios';
 import './AllProducts.css'; 
 
@@ -6,11 +7,13 @@ const MOKKY_BASE_URL = "https://a8b7ddd6558fddf5.mokky.dev";
 
 function ProductsPage() { 
     const [products, setProducts] = useState([]);
-    const [searchTerm, setSearchTerm] = useState('');
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     const categories = ['burgers', 'drinks', 'combo']; 
+
+    const [searchParams, setSearchParams] = useSearchParams();
+    const searchTerm = searchParams.get('q') || '';
 
     useEffect(() => {
         const fetchAllProducts = async () => {
@@ -20,7 +23,6 @@ function ProductsPage() {
             const promises = categories.map(async (categoryName) => {
                 try {
                     const response = await axios.get(`${MOKKY_BASE_URL}/${categoryName}`);
-                    
                     return {
                         category: categoryName,
                         data: response.data
@@ -53,17 +55,18 @@ function ProductsPage() {
         fetchAllProducts();
     }, []);
 
-    const filteredProducts = useMemo(() => {
-        if (!searchTerm) {
-            return products;
-        }
+    const filteredProducts = products.filter(product => 
+        product.name?.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
-        const lowerCaseSearch = searchTerm.toLowerCase();
-        
-        return products.filter(product => 
-            product.name && product.name.toLowerCase().includes(lowerCaseSearch)
-        );
-    }, [products, searchTerm]);
+    const handleSearchChange = (e) => {
+        const value = e.target.value;
+        if (value) {
+            setSearchParams({ q: value });
+        } else {
+            setSearchParams({});
+        }
+    };
 
     if (loading) return <div className="loading-message">Загрузка всех видов еды...</div>;
     if (error) return <div className="error-message">{error}</div>;
@@ -77,7 +80,7 @@ function ProductsPage() {
                 placeholder="Поиск по названию..."
                 className="search-input"
                 value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+                onChange={handleSearchChange}
             />
 
             <div className="product-grid">
@@ -99,7 +102,7 @@ function ProductsPage() {
 
                             <h2 className="product-name">{product.name}</h2>
                             <p className="product-price">
-                                Цена: {product.price ? `${product.price} ₽` : 'Цена не указана'}
+                                Цена: {product.price ? `${product.price} ₸` : 'Цена не указана'}
                             </p>
                             <span className="product-category">Категория: {product.category}</span>
                             <button className="add-to-cart-btn">В корзину</button>
